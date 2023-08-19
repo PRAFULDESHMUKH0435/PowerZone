@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
 import 'loginscreen.dart';
 
 class SplashScreen extends StatefulWidget {
