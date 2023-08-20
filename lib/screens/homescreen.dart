@@ -35,7 +35,22 @@ class _HomeScreenState extends State<HomeScreen> {
       // BODY
       body: Container(
         color: Colors.yellow,
-        child: Center(child: Text("HOME SCREEN")),
+        child: Column(
+          children: [
+            // AUTOIMAGE SLIDER
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 240,
+                width: double.infinity,
+                child: Card(
+                  color: Colors.white,
+                  elevation: 50.0,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
 
       // BOTTOM NAVIGATION BAR
