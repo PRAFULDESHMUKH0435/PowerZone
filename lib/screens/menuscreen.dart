@@ -5,13 +5,17 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text("Hi"),
-        );
-      },
-      itemCount: 50,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ListView.builder(
+        itemBuilder: (context, index) {
+          return Container(
+            height: 50,
+            width: double.infinity,
+            color: Colors.yellow,
+          );
+        },
+      ),
     );
   }
 }

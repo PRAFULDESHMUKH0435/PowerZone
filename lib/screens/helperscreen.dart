@@ -13,9 +13,11 @@ class HelperScreen extends StatefulWidget {
 class _HelperScreenState extends State<HelperScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.yellow,
-      appBar: AppBar(),
+    return ZoomDrawer(
+      mainScreen: HomeScreen(),
+      menuScreen: MenuScreen(),
+      angle: -22,
+      style: DrawerStyle.defaultStyle,
     );
   }
 }
