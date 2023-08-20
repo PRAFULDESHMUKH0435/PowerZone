@@ -73,7 +73,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        print(username.toString());
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -90,4 +89,9 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void CheckCredentails(String user_name, String user_password) {
+  String name = "user";
+  String pass = "Pass@12345";
 }

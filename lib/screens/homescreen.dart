@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // BOTTOM NAVIGATION BAR
       bottomNavigationBar: CurvedNavigationBar(
-        height: 60,
+        height: 55,
         backgroundColor: Colors.yellow,
         items: const <Widget>[
           Icon(
