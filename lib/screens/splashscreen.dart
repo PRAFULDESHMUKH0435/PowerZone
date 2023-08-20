@@ -34,7 +34,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 "The Power Zone",
                 style: TextStyle(
                   fontSize: 30,
-                  fontco
                   fontWeight: FontWeight.bold,
                 ),
               ),
