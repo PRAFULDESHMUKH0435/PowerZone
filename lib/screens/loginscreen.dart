@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'homescreen.dart';
+import 'helperscreen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController username = new TextEditingController();
+    TextEditingController userpassword = new TextEditingController();
+
     return Scaffold(
       backgroundColor: Colors.yellow,
       body: Center(
@@ -23,6 +26,7 @@ class LoginScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: TextField(
+                      controller: username,
                       decoration: InputDecoration(
                           suffixIcon: const Icon(
                             Icons.account_circle,
@@ -46,6 +50,7 @@ class LoginScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: TextField(
+                      controller: userpassword,
                       decoration: InputDecoration(
                           suffixIcon: Icon(
                             Icons.remove_red_eye,
@@ -68,10 +73,11 @@ class LoginScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                       onPressed: () {
+                        print(username.toString());
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
+                                builder: (context) => HelperScreen()));
                       },
                       child: Text(
                         "Submit",
