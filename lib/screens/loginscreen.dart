@@ -1,5 +1,8 @@
+import 'dart:developer';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:powerzone/services/Service.dart';
 import 'helperscreen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,6 +12,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController username = new TextEditingController();
     TextEditingController userpassword = new TextEditingController();
+    FirebaseAuth auth = FirebaseAuth.instance;
 
     return Scaffold(
       backgroundColor: Colors.yellow,
@@ -52,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                     child: TextField(
                       controller: userpassword,
                       decoration: InputDecoration(
-                          suffixIcon: Icon(
+                          suffixIcon: const Icon(
                             Icons.remove_red_eye,
                             color: Colors.black,
                           ),
@@ -73,10 +77,14 @@ class LoginScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HelperScreen()));
+                        auth
+                            .createUserWithEmailAndPassword(
+                                email: username.text.toString().trim(),
+                                password: userpassword.text.toString().trim())
+                            .then((value) =>
+                                Services().showtoast("Successfuly Registered"))
+                            .onError((error, stackTrace) =>
+                                Services().showtoast(error.toString()));
                       },
                       child: Text(
                         "Submit",
